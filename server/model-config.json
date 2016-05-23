@@ -63,6 +63,9 @@
   "user": {
     "dataSource": "db",
     "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    },
     "$promise": {},
     "$resolved": true
   },
