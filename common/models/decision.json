@@ -1,0 +1,66 @@
+{
+  "name": "decision",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "id": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "creationDate": {
+      "type": "date",
+      "required": true
+    },
+    "lastUpdateDate": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "criteria": {
+      "type": "embedsMany",
+      "model": "criteria",
+      "property": "criteriaList",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    },
+    "users": {
+      "type": "embedsMany",
+      "model": "user",
+      "property": "userList",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    },    
+    "comments": {
+      "type": "embedsMany",
+      "model": "comment",
+      "property": "commentsList",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

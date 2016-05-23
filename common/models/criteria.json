@@ -1,0 +1,68 @@
+{
+  "name": "criteria",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true,
+      "index": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "creationDate": {
+      "type": "date",
+      "required": true
+    },
+    "lastUpdateDate": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "comments": {
+      "type": "embedsMany",
+      "model": "comment",
+      "property": "commentList",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    },
+    "users": {
+      "type": "embedsMany",
+      "model": "user",
+      "property": "userList",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    },    
+    "values": {
+      "type": "embedsMany",
+      "model": "value",
+      "property": "valuesList",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
