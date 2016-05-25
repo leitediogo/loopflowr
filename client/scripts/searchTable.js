@@ -1,6 +1,6 @@
 var ProductCategoryRow = React.createClass({
   render: function() {
-    return (<tr><th colSpan="2">{this.props.category}</th></tr>);
+    return (<tr><th colSpan="2">cat{this.props.category}</th></tr>);
   }
 });
 
@@ -13,8 +13,8 @@ var ProductRow = React.createClass({
       </span>;
     return (
       <tr>
-        <td>{name}</td>
-        <td>{this.props.product.price}</td>
+        <td>n{name}</td>
+        <td>p{this.props.product.price}</td>
       </tr>
     );
   }
