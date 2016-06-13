@@ -60,15 +60,6 @@
     "$promise": {},
     "$resolved": true
   },
-  "user": {
-    "dataSource": "flowrdatasourceMongoDB",
-    "public": true,
-    "options": {
-      "emailVerificationRequired": true
-    },
-    "$promise": {},
-    "$resolved": true
-  },
   "role": {
     "dataSource": "flowrdatasourceMongoDB",
     "public": true,
