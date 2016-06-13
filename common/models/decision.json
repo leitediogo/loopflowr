@@ -43,13 +43,9 @@
       }
     },
     "users": {
-      "type": "embedsMany",
-      "model": "user",
-      "property": "userList",
-      "options": {
-        "validate": true,
-        "forceId": false
-      }
+      "type": "hasAndBelongsToMany",
+      "model": "User",
+      "foreignKey": ""
     },
     "comments": {
       "type": "embedsMany",
@@ -61,6 +57,13 @@
       }
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
   "methods": {}
 }
