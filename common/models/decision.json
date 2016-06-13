@@ -45,7 +45,7 @@
     "users": {
       "type": "hasAndBelongsToMany",
       "model": "User",
-      "foreignKey": ""
+      "foreignKey": "decisionId"
     },
     "comments": {
       "type": "embedsMany",
