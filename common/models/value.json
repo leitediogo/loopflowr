@@ -43,7 +43,7 @@
         "validate": true,
         "forceId": false
       }
-    },    
+    },
     "comments": {
       "type": "embedsMany",
       "model": "comment",

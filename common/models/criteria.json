@@ -52,7 +52,7 @@
         "validate": true,
         "forceId": false
       }
-    },    
+    },
     "values": {
       "type": "embedsMany",
       "model": "value",

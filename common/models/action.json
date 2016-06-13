@@ -52,7 +52,7 @@
         "validate": true,
         "forceId": false
       }
-    }    
+    }
   },
   "acls": [],
   "methods": {}

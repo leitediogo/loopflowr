@@ -2,5 +2,15 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "flowrdatasourceMongoDB": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "flowrDB",
+    "password": "",
+    "name": "flowrdatasourceMongoDB",
+    "user": "",
+    "connector": "mongodb"
   }
 }

@@ -14,54 +14,54 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "flowrdatasourceMongoDB"
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "flowrdatasourceMongoDB",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "flowrdatasourceMongoDB",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "flowrdatasourceMongoDB",
     "public": false
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "flowrdatasourceMongoDB",
     "public": false
   },
   "decision": {
-    "dataSource": "db",
+    "dataSource": "flowrdatasourceMongoDB",
     "public": true,
     "$promise": {},
     "$resolved": true
   },
   "criteria": {
-    "dataSource": "db",
+    "dataSource": "flowrdatasourceMongoDB",
     "public": true
   },
   "comment": {
-    "dataSource": "db",
+    "dataSource": "flowrdatasourceMongoDB",
     "public": true,
     "$promise": {},
     "$resolved": true
   },
   "action": {
-    "dataSource": "db",
+    "dataSource": "flowrdatasourceMongoDB",
     "public": true,
     "$promise": {},
     "$resolved": true
   },
   "value": {
-    "dataSource": "db",
+    "dataSource": "flowrdatasourceMongoDB",
     "public": true,
     "$promise": {},
     "$resolved": true
   },
   "user": {
-    "dataSource": "db",
+    "dataSource": "flowrdatasourceMongoDB",
     "public": true,
     "options": {
       "emailVerificationRequired": true
@@ -70,7 +70,7 @@
     "$resolved": true
   },
   "role": {
-    "dataSource": "db",
+    "dataSource": "flowrdatasourceMongoDB",
     "public": true,
     "$promise": {},
     "$resolved": true
