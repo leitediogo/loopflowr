@@ -43,14 +43,10 @@
       }
     },
     "users": {
-      "type": "embedsMany",
-      "model": "user",
-      "property": "userList",
-      "options": {
-        "validate": true,
-        "forceId": false
-      }
-    },    
+      "type": "hasAndBelongsToMany",
+      "model": "User",
+      "foreignKey": "decisionId"
+    },
     "comments": {
       "type": "embedsMany",
       "model": "comment",
@@ -61,6 +57,32 @@
       }
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "create"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {}
 }
