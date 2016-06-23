@@ -7,5 +7,5 @@ module.exports = function(app) {
       models.push(modelName);
     }
   });
-  console.log('Models:', models);
+  console.log('boot script 1 - Models:', models);
 };
