@@ -1,6 +1,7 @@
 {
   "name": "loopflwr",
   "version": "0.0.1",
+  "author": "Diogo Leite",
   "main": "server/server.js",
   "scripts": {
     "start": "node .",
