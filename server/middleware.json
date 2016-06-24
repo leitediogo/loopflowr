@@ -40,8 +40,6 @@
       ]
     }
   },
-
-  
   "files": {
     "loopback#static": {
       "params": "$!../client"

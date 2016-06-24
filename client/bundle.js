@@ -20376,6 +20376,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _TextInput = __webpack_require__(170);
+
+	var _TextInput2 = _interopRequireDefault(_TextInput);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -20398,8 +20402,18 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                null,
-	                ' This is a react app'
+	                { className: 'app' },
+	                _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    ' App Component'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    ' App Component second line'
+	                ),
+	                _react2.default.createElement(_TextInput2.default, null)
 	            );
 	        }
 	    }]);
@@ -20408,6 +20422,81 @@
 	}(_react.Component);
 
 	exports.default = App;
+
+/***/ },
+/* 170 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var TextInput = function (_Component) {
+	    _inherits(TextInput, _Component);
+
+	    function TextInput(props, context) {
+	        _classCallCheck(this, TextInput);
+
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(TextInput).call(this, props, context));
+
+	        _this.state = {
+	            inputText1: 'initial text',
+	            inputText2: 'initial text2',
+	            inputText3: 'initial text3'
+	        };
+	        return _this;
+	    }
+
+	    _createClass(TextInput, [{
+	        key: 'handleChangeText1',
+	        value: function handleChangeText1() {
+	            console.log(this);
+	        }
+	    }, {
+	        key: 'handleChangeText2',
+	        value: function handleChangeText2() {
+	            console.log('Text2 changed');
+	        }
+	    }, {
+	        key: 'handleChangeText3',
+	        value: function handleChangeText3(event) {
+	            this.setState({
+	                inputText3: event.target.value
+	            });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'form',
+	                null,
+	                _react2.default.createElement('input', { type: true, text: 'text', placeholder: 'Insert text 1', defaultValue: this.state.inputText, onChange: this.handleChangeText1.bind(this) }),
+	                _react2.default.createElement('input', { type: true, text: 'text', placeholder: 'Insert text 2', defaultValue: this.state.inputText, onChange: this.handleChangeText2 }),
+	                _react2.default.createElement('input', { type: true, text: 'text', placeholder: 'Insert text 3', defaultValue: this.state.inputText, onChange: this.handleChangeText3.bind(this) })
+	            );
+	        }
+	    }]);
+
+	    return TextInput;
+	}(_react.Component);
+
+	exports.default = TextInput;
 
 /***/ }
 /******/ ]);
