@@ -3,6 +3,7 @@ import TextInput from './TextInput'
 import Button from './Button'
 import LikeButton from './LikeButton'
 import Avatar from './Avatar'
+import BelleComponents from './BelleComponents'
 
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
                 <div><TextInput/></div>
                 <div><LikeButton/></div>
                 <div><Avatar pagename = "Engineering" /></div>
+                <div><BelleComponents/></div>
             </div>
         )
     }
