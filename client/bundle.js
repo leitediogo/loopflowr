@@ -19800,6 +19800,8 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	//import EssenceComponentTable from './EssenceComponentTable'
+
 	var App = function (_Component) {
 	    _inherits(App, _Component);
 
@@ -29656,6 +29658,20 @@
 
 	var _essenceButton2 = _interopRequireDefault(_essenceButton);
 
+	var _essenceCard = __webpack_require__(300);
+
+	var _essenceInput = __webpack_require__(307);
+
+	var _essenceInput2 = _interopRequireDefault(_essenceInput);
+
+	var _essenceProgress = __webpack_require__(310);
+
+	var _essenceProgress2 = _interopRequireDefault(_essenceProgress);
+
+	var _essenceToast = __webpack_require__(313);
+
+	var _essenceToast2 = _interopRequireDefault(_essenceToast);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29676,7 +29692,60 @@
 	    _createClass(EssenceComponents, [{
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement(_essenceButton2.default, { label: 'Button Example', ripple: false, type: 'success', className: 'raised' });
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(_essenceButton2.default, { label: 'Button Example', ripple: false, type: 'success', className: 'raised' }),
+	                _react2.default.createElement(
+	                    _essenceToast2.default,
+	                    { classes: 'e-text-white', visible: false, delay: 5000 },
+	                    'Olha a mensagem foda-se!'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    _react2.default.createElement(
+	                        _essenceCard.Card,
+	                        null,
+	                        _react2.default.createElement(
+	                            _essenceCard.CardHeader,
+	                            null,
+	                            'Card header'
+	                        ),
+	                        _react2.default.createElement(
+	                            _essenceCard.CardContent,
+	                            null,
+	                            'Card content'
+	                        ),
+	                        _react2.default.createElement(
+	                            _essenceCard.CardFooter,
+	                            null,
+	                            'Card footer with action buttons'
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    _react2.default.createElement(_essenceInput2.default, { classes: 'has-success', type: 'text', name: 'label', placeholder: 'Input + Placeholder and has-success' }),
+	                    _react2.default.createElement(_essenceInput2.default, { classes: 'has-success', type: 'text', name: 'label', placeholder: 'Input + Placeholder, has-success, Counter = 50', counter: 50 }),
+	                    _react2.default.createElement(_essenceInput2.default, { classes: 'has-error', type: 'text', name: 'label', placeholder: 'Input + Placeholder, has-error, Counter = 20', counter: 20 }),
+	                    _react2.default.createElement(_essenceInput2.default, { type: 'text', name: 'label', placeholder: 'Disabled input', disabled: true }),
+	                    _react2.default.createElement(_essenceInput2.default, { type: 'text', name: 'label', label: 'Input with label' }),
+	                    _react2.default.createElement(_essenceInput2.default, { type: 'email', name: 'label', label: 'Email input' }),
+	                    _react2.default.createElement(_essenceInput2.default, { type: 'number', name: 'label', placeholder: 'Number input', hint: 'Number input' }),
+	                    _react2.default.createElement(_essenceInput2.default, { type: 'textarea', name: 'label', rows: 5, label: 'Textarea + Label with 5 rows' }),
+	                    _react2.default.createElement(_essenceInput2.default, { type: 'textarea', name: 'label', rows: 3, placeholder: 'Textarea + Placeholder with 3 rows' })
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    _react2.default.createElement(_essenceProgress2.default, { type: 'circle' }),
+	                    _react2.default.createElement(_essenceProgress2.default, { type: 'circle', small: true }),
+	                    _react2.default.createElement(_essenceProgress2.default, { type: 'dots' }),
+	                    _react2.default.createElement(_essenceProgress2.default, { type: 'slider' })
+	                )
+	            );
 	        }
 	    }]);
 
@@ -31958,6 +32027,944 @@
 
 	// module
 	exports.push([module.id, ".e-btn,\n.flat,\n.fab,\n.raised,\n.fab-mini {\n  display: inline-block;\n  min-height: 36px;\n  line-height: 36px;\n  padding: 0 24px;\n  border: 0;\n  margin: 8px;\n  cursor: pointer;\n  -webkit-border-radius: 2px;\n  /* Safari & Chrome*/\n  -moz-border-radius: 2px;\n  /* Mozilla */\n  border-radius: 2px;\n  background-clip: padding-box;\n  text-transform: uppercase;\n  font-size: 14px;\n}\n.e-btn:hover:not(.flat),\n.flat:hover:not(.flat),\n.fab:hover:not(.flat),\n.raised:hover:not(.flat),\n.fab-mini:hover:not(.flat) {\n  -webkit-box-shadow: 0 1px 9px rgba(0, 0, 0, 0.16), 0 6px 10px rgba(0, 0, 0, 0.32);\n  -moz-box-shadow: 0 1px 9px rgba(0, 0, 0, 0.16), 0 6px 10px rgba(0, 0, 0, 0.32);\n  box-shadow: 0 1px 9px rgba(0, 0, 0, 0.16), 0 6px 10px rgba(0, 0, 0, 0.32);\n  -webkit-transition: box-shadow 0.2s ease;\n  /* Safari & Chrome*/\n  -moz-transition: box-shadow 0.2s ease;\n  /* Mozilla */\n  -ms-transition: box-shadow 0.2s ease;\n  /* IE */\n  -o-transition: box-shadow 0.2s ease;\n  /* Opera */\n  transition: box-shadow 0.2s ease;\n}\n.e-btn:focus,\n.flat:focus,\n.fab:focus,\n.raised:focus,\n.fab-mini:focus {\n  border: 0;\n  outline: none;\n}\n.e-btn:disabled,\n.flat:disabled,\n.fab:disabled,\n.raised:disabled,\n.fab-mini:disabled {\n  pointer-events: none;\n  box-shadow: none ;\n  opacity: 0.5;\n}\n.e-dialog .e-btn,\n.e-dialog .flat,\n.e-dialog .fab,\n.e-dialog .raised,\n.e-dialog .fab-mini {\n  padding: 0 8px;\n}\n.flat {\n  background-color: transparent ;\n  border: none ;\n  min-width: 88px;\n  font-weight: 500;\n  padding: 0 8px;\n}\n.flat:hover,\n.flat:focus {\n  background-color: #e6e6e6;\n}\n.flat:active {\n  background-color: #cccccc;\n}\n.fab,\n.fab-mini {\n  z-index: 1;\n  display: inline-block;\n  width: 56px;\n  height: 56px;\n  padding: 0;\n  margin: 16px;\n  background-color: #E91E63;\n  text-align: center;\n  -webkit-border-radius: 50%;\n  /* Safari & Chrome*/\n  -moz-border-radius: 50%;\n  /* Mozilla */\n  border-radius: 50%;\n  background-clip: border-box;\n  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 3px 3px rgba(0, 0, 0, 0.28);\n  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 3px 3px rgba(0, 0, 0, 0.28);\n  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 3px 3px rgba(0, 0, 0, 0.28);\n  -webkit-transition: box-shadow 0.2s ease;\n  /* Safari & Chrome*/\n  -moz-transition: box-shadow 0.2s ease;\n  /* Mozilla */\n  -ms-transition: box-shadow 0.2s ease;\n  /* IE */\n  -o-transition: box-shadow 0.2s ease;\n  /* Opera */\n  transition: box-shadow 0.2s ease;\n}\n.fab i,\n.fab-mini i {\n  padding: 16px;\n  display: inline-block;\n  width: 24px;\n  height: 24px;\n  line-height: 24px;\n  text-align: center;\n  font-size: 24px;\n}\n.fab:hover,\n.fab-mini:hover {\n  -webkit-box-shadow: 0 2px 14px rgba(0, 0, 0, 0.16), 0 10px 13px rgba(0, 0, 0, 0.32);\n  -moz-box-shadow: 0 2px 14px rgba(0, 0, 0, 0.16), 0 10px 13px rgba(0, 0, 0, 0.32);\n  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.16), 0 10px 13px rgba(0, 0, 0, 0.32);\n  -webkit-transition: box-shadow 0.2s ease;\n  /* Safari & Chrome*/\n  -moz-transition: box-shadow 0.2s ease;\n  /* Mozilla */\n  -ms-transition: box-shadow 0.2s ease;\n  /* IE */\n  -o-transition: box-shadow 0.2s ease;\n  /* Opera */\n  transition: box-shadow 0.2s ease;\n}\n.fab:focus,\n.fab-mini:focus {\n  outline: none;\n}\n.fab-mini {\n  height: 40px;\n  width: 40px;\n}\n.fab-mini i {\n  padding: 8px;\n}\n.raised {\n  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 3px 3px rgba(0, 0, 0, 0.28);\n  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 3px 3px rgba(0, 0, 0, 0.28);\n  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 3px 3px rgba(0, 0, 0, 0.28);\n  -webkit-transition: box-shadow 0.2s ease;\n  /* Safari & Chrome*/\n  -moz-transition: box-shadow 0.2s ease;\n  /* Mozilla */\n  -ms-transition: box-shadow 0.2s ease;\n  /* IE */\n  -o-transition: box-shadow 0.2s ease;\n  /* Opera */\n  transition: box-shadow 0.2s ease;\n  min-width: 64px;\n  padding: 0 16px;\n  color: #fff;\n}\n.raised:hover,\n.raised:focus {\n  color: #fff;\n}\n.raised:active {\n  color: #fff;\n}\n.e-btn-default {\n  background-color: #9E9E9E;\n  color: #000 !important;\n}\n.e-btn-default:hover,\n.e-btn-default:focus {\n  background-color: #757575;\n}\n.e-btn-default:active {\n  background-color: #616161;\n}\n.e-btn-primary {\n  background-color: #2196F3;\n  color: #fff;\n}\n.e-btn-primary:hover,\n.e-btn-primary:focus {\n  background-color: #1E88E5;\n}\n.e-btn-primary:active {\n  background-color: #1976D2;\n}\n.e-btn-success {\n  background-color: #4CAF50;\n  color: #fff;\n}\n.e-btn-success:hover,\n.e-btn-success:focus {\n  background-color: #43A047;\n}\n.e-btn-success:active {\n  background-color: #388E3C;\n}\n.e-btn-info {\n  background-color: #03A9F4;\n  color: #fff;\n}\n.e-btn-info:hover,\n.e-btn-info:focus {\n  background-color: #039BE5;\n}\n.e-btn-info:active {\n  background-color: #0288D1;\n}\n.e-btn-warning {\n  background-color: #FF9800;\n  color: #fff;\n}\n.e-btn-warning:hover,\n.e-btn-warning:focus {\n  background-color: #FB8C00;\n}\n.e-btn-warning:active {\n  background-color: #F57C00;\n}\n.e-btn-danger {\n  background-color: #F44336;\n  color: #fff;\n}\n.e-btn-danger:hover,\n.e-btn-danger:focus {\n  background-color: #E53935;\n}\n.e-btn-danger:active {\n  background-color: #D32F2F;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 300 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Card = __webpack_require__(301);
+	var CardContent = __webpack_require__(304);
+	var CardFooter = __webpack_require__(305);
+	var CardHeader = __webpack_require__(306);
+
+	exports.Card = Card;
+	exports.CardContent = CardContent;
+	exports.CardFooter = CardFooter;
+	exports.CardHeader = CardHeader;
+
+/***/ },
+/* 301 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _react = __webpack_require__(54);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(267);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	__webpack_require__(302);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// require('!css!less!./card.less');
+
+	var Card = (function (_React$Component) {
+	    _inherits(Card, _React$Component);
+
+	    function Card(props) {
+	        _classCallCheck(this, Card);
+
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Card).call(this, props));
+
+	        _this.state = {
+	            classes: (0, _classnames2.default)(_this.props.classes, _this.props.className, 'card')
+	        };
+	        return _this;
+	    }
+
+	    _createClass(Card, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                _extends({}, this.props, {
+	                    className: this.state.classes
+	                }),
+	                this.props.children
+	            );
+	        }
+	    }]);
+
+	    return Card;
+	})(_react2.default.Component);
+
+	module.exports = Card;
+
+/***/ },
+/* 302 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(303);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(273)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../css-loader/index.js!./../../less-loader/index.js!./card.less", function() {
+				var newContent = require("!!./../../css-loader/index.js!./../../less-loader/index.js!./card.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 303 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(272)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".card:before,\n.card:after,\n.card .card-suplimentary-actions:before,\n.card .card-suplimentary-actions:after {\n  content: \" \";\n  /* 1 */\n  display: table;\n  /* 2 */\n}\n.card:after,\n.card .card-suplimentary-actions:after {\n  clear: both;\n}\n.card,\n.card .card-suplimentary-actions {\n  *zoom: 1;\n}\n/*Start*/\n.card {\n  margin-bottom: 30px;\n  overflow: hidden;\n  -webkit-border-radius: 2px;\n  /* Safari & Chrome*/\n  -moz-border-radius: 2px;\n  /* Mozilla */\n  border-radius: 2px;\n  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);\n  -moz-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);\n  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);\n}\n.card .card-header {\n  padding: 16px;\n}\n.card .card-header .card-header-image {\n  float: left;\n  margin-right: 16px;\n  border-radius: 50%;\n  overflow: hidden;\n  height: 60px;\n  width: 60px;\n}\n.card .card-header .card-header-text {\n  float: left;\n}\n.card .card-header .card-header-text h2 {\n  color: #616161;\n}\n.card .card-header .card-header-text h3 {\n  color: #BDBDBD;\n  line-height: 20px;\n}\n.card .card-main-image {\n  position: relative;\n  padding: 0;\n}\n.card .card-main-image .e-headline {\n  color: #fff;\n  position: absolute;\n  bottom: 16px;\n  left: 16px;\n}\n.card .card-main-image img {\n  display: block;\n  width: 100%;\n  height: auto;\n}\n.card .card-supporting-text {\n  padding: 16px;\n}\n.card .card-supporting-text p {\n  font-size: 14px;\n  line-height: 20px;\n  color: #212121;\n  text-transform: normal;\n  margin: 0;\n}\n.card .card-suplimentary-actions {\n  padding: 8px;\n  border-top: 1px solid #ccc;\n}\n.card .card-suplimentary-actions button {\n  margin: 0;\n}\n.card .left-image {\n  float: left;\n  width: 25%;\n}\n.card .left-image img {\n  display: block;\n  max-width: 100%;\n}\n.card .content-after-image {\n  float: left;\n  width: 75%;\n}\n.card [class^=\"e-btn-\"] {\n  min-width: 0;\n  padding: 0 8px;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 304 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _react = __webpack_require__(54);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(267);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	__webpack_require__(302);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// require('!css!less!./card.less');
+
+	var CardContent = (function (_React$Component) {
+	  _inherits(CardContent, _React$Component);
+
+	  function CardContent(props) {
+	    _classCallCheck(this, CardContent);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(CardContent).call(this, props));
+
+	    _this.state = {
+	      classes: (0, _classnames2.default)('card-supporting-text', _this.props.classes, _this.props.className)
+	    };
+	    return _this;
+	  }
+
+	  _createClass(CardContent, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        _extends({}, this.props, { className: this.state.classes }),
+	        this.props.children
+	      );
+	    }
+	  }]);
+
+	  return CardContent;
+	})(_react2.default.Component);
+
+	module.exports = CardContent;
+
+/***/ },
+/* 305 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _react = __webpack_require__(54);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(267);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	__webpack_require__(302);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// require('!css!less!./card.less');
+
+	var CardFooter = (function (_React$Component) {
+	  _inherits(CardFooter, _React$Component);
+
+	  function CardFooter(props) {
+	    _classCallCheck(this, CardFooter);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(CardFooter).call(this, props));
+
+	    _this.state = {
+	      classes: (0, _classnames2.default)('card-suplimentary-actions', 'clearfix', _this.props.classes, _this.props.className)
+	    };
+	    return _this;
+	  }
+
+	  _createClass(CardFooter, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        _extends({}, this.props, { className: this.state.classes }),
+	        this.props.children
+	      );
+	    }
+	  }]);
+
+	  return CardFooter;
+	})(_react2.default.Component);
+
+	module.exports = CardFooter;
+
+/***/ },
+/* 306 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _react = __webpack_require__(54);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(267);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	__webpack_require__(302);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// require('!css!less!./card.less');
+
+	var CardHeader = (function (_React$Component) {
+	  _inherits(CardHeader, _React$Component);
+
+	  function CardHeader(props) {
+	    _classCallCheck(this, CardHeader);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(CardHeader).call(this, props));
+
+	    _this.state = {
+	      classes: (0, _classnames2.default)('card-header', 'clearfix', _this.props.classes, _this.props.className)
+	    };
+	    return _this;
+	  }
+
+	  _createClass(CardHeader, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        _extends({}, this.props, { className: this.state.classes }),
+	        this.props.children
+	      );
+	    }
+	  }]);
+
+	  return CardHeader;
+	})(_react2.default.Component);
+
+	module.exports = CardHeader;
+
+/***/ },
+/* 307 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _react = __webpack_require__(54);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(267);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	__webpack_require__(308);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// require('!css!less!./input.less');
+
+	var Input = (function (_React$Component) {
+	    _inherits(Input, _React$Component);
+
+	    function Input(props) {
+	        _classCallCheck(this, Input);
+
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Input).call(this, props));
+
+	        _this.state = {
+	            counter: {
+	                current: 0,
+	                maximum: parseInt(_this.props.counter)
+	            },
+	            inputClasses: (0, _classnames2.default)('e-input', { 'empty': _this.props.value || _this.props.defaultValue ? false : true }),
+	            inputValue: _this.props.value || _this.props.defaultValue || '',
+	            classes: (0, _classnames2.default)('e-input-group', _this.props.className, _this.props.classes)
+	        };
+	        return _this;
+	    }
+
+	    _createClass(Input, [{
+	        key: 'componentWillReceiveProps',
+	        value: function componentWillReceiveProps(nextProps) {
+	            this.setState({
+	                classes: (0, _classnames2.default)('e-input-group', nextProps.className, nextProps.classes)
+	            });
+	        }
+	    }, {
+	        key: 'handleChange',
+	        value: function handleChange(event) {
+	            var counter = this.state.counter;
+	            var value = this.currentInput.value;
+
+	            if (value.length >= counter.maximum && this.props.counter) {
+	                value = value.substr(0, counter.maximum);
+	            }
+
+	            counter.current = value.length;
+
+	            this.setState({
+	                counter: counter,
+	                inputValue: value,
+	                inputClasses: (0, _classnames2.default)('e-input', { 'empty': value.length > 0 ? false : true })
+	            });
+
+	            if (this.props.onChange) {
+	                return this.props.onChange(event);
+	            }
+	        }
+	    }, {
+	        key: 'renderLabel',
+	        value: function renderLabel() {
+	            if (this.props.label || !this.props.placeholder) {
+	                return _react2.default.createElement(
+	                    'span',
+	                    { className: 'floating-label' },
+	                    this.props.label
+	                );
+	            }
+	            return;
+	        }
+	    }, {
+	        key: 'renderHint',
+	        value: function renderHint() {
+	            if (this.props.hint) {
+	                return _react2.default.createElement(
+	                    'span',
+	                    { className: 'e-hint' },
+	                    this.props.hint
+	                );
+	            }
+	            return;
+	        }
+	    }, {
+	        key: 'renderCounter',
+	        value: function renderCounter() {
+	            if (this.props.counter) {
+	                return _react2.default.createElement(
+	                    'span',
+	                    { className: 'e-count' },
+	                    this.state.counter.current,
+	                    '/',
+	                    this.state.counter.maximum
+	                );
+	            }
+	            return;
+	        }
+	    }, {
+	        key: 'renderEffect',
+	        value: function renderEffect() {
+	            return _react2.default.createElement('span', { className: 'e-input-efects' });
+	        }
+	    }, {
+	        key: 'renderInput',
+	        value: function renderInput() {
+	            var _this2 = this;
+
+	            var inputType = this.props.type;
+
+	            switch (inputType) {
+	                case 'textarea':
+	                    return _react2.default.createElement('textarea', _extends({}, this.props, {
+	                        className: this.state.inputClasses,
+	                        onChange: this.handleChange.bind(this),
+	                        defaultValue: this.state.inputValue,
+	                        ref: function ref(_ref) {
+	                            return _this2.currentInput = _ref;
+	                        }
+	                    }));
+	                    break;
+	                default:
+	                    return _react2.default.createElement('input', _extends({}, this.props, {
+	                        className: this.state.inputClasses,
+	                        defaultValue: this.state.inputValue,
+	                        onChange: this.handleChange.bind(this),
+	                        ref: function ref(_ref2) {
+	                            return _this2.currentInput = _ref2;
+	                        }
+	                    }));
+	                    break;
+	            }
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: this.state.classes },
+	                this.renderInput(),
+	                this.renderCounter(),
+	                this.renderEffect(),
+	                this.renderLabel(),
+	                this.renderHint()
+	            );
+	        }
+	    }]);
+
+	    return Input;
+	})(_react2.default.Component);
+
+	Input.defaultProps = {
+	    counter: false,
+	    value: undefined,
+	    label: undefined,
+	    placeholder: undefined,
+	    hint: undefined,
+	    type: 'text'
+	};
+
+	module.exports = Input;
+
+/***/ },
+/* 308 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(309);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(273)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../css-loader/index.js!./../../less-loader/index.js!./input.less", function() {
+				var newContent = require("!!./../../css-loader/index.js!./../../less-loader/index.js!./input.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 309 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(272)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".e-count {\n  position: absolute;\n  bottom: -27px;\n  right: 0px;\n  display: inline-block;\n  opacity: 0;\n}\nfieldset[disabled] .e-input,\n.e-input-group .e-input,\n.e-input,\nfieldset[disabled] .e-input:focus,\n.e-input-group .e-input:focus,\n.e-input:focus,\nfieldset[disabled] .e-input.focus,\n.e-input-group .e-input.focus,\n.e-input.focus {\n  padding: 0;\n  float: none;\n  border: 0;\n  box-shadow: none;\n  border-radius: 0;\n  background: transparent;\n  border-bottom: 1px solid #757575;\n  width: 100%;\n  display: block;\n}\nfieldset[disabled] .e-input:not(textarea):not(select),\n.e-input-group .e-input:not(textarea):not(select),\n.e-input:not(textarea):not(select),\nfieldset[disabled] .e-input:focus:not(textarea):not(select),\n.e-input-group .e-input:focus:not(textarea):not(select),\n.e-input:focus:not(textarea):not(select),\nfieldset[disabled] .e-input.focus:not(textarea):not(select),\n.e-input-group .e-input.focus:not(textarea):not(select),\n.e-input.focus:not(textarea):not(select) {\n  height: 24px;\n  padding-bottom: 8px;\n  box-sizing: border-box;\n}\nfieldset[disabled] .e-input:disabled,\n.e-input-group .e-input:disabled,\n.e-input:disabled,\nfieldset[disabled] .e-input:focus:disabled,\n.e-input-group .e-input:focus:disabled,\n.e-input:focus:disabled,\nfieldset[disabled] .e-input.focus:disabled,\n.e-input-group .e-input.focus:disabled,\n.e-input.focus:disabled {\n  border-style: dotted;\n}\n.e-input-group {\n  margin: 16px 0 8px 0;\n  position: relative;\n  clear: both;\n}\n.e-input-group .e-input:focus,\n.e-input-group .e-input.focus {\n  outline: none;\n}\n.e-input-group .floating-label {\n  color: #9E9E9E;\n  font-size: 16px;\n  position: absolute;\n  pointer-events: none;\n  left: 0;\n  top: 0;\n  font-family: Roboto Regular, Noto, sans-serif;\n  transition: 0.2s ease all;\n  opacity: 0;\n}\n.e-input-group .e-input:not(.empty) ~ .floating-label {\n  top: -20px;\n  font-size: 12px;\n  opacity: 1;\n}\n.e-input-group .e-input:focus:invalid ~ .floating-label,\n.e-input-group .e-input.focus:invalid ~ .floating-label {\n  color: #F44336;\n}\n.e-input-group .e-input:focus:invalid ~ .e-count,\n.e-input-group .e-input.focus:invalid ~ .e-count {\n  color: #F44336;\n  opacity: 1;\n}\n.e-input-group .e-input:focus ~ .e-input-efects:after,\n.e-input-group .e-input.focus ~ .e-input-efects:after {\n  topbackground-color: #009587;\n}\n.e-input-group .e-input:focus ~ .e-count,\n.e-input-group .e-input.focus ~ .e-count {\n  color: #009587;\n  opacity: 1;\n}\n.e-input-group .e-input:focus:invalid ~ .e-input-efects:before,\n.e-input-group .e-input.focus:invalid ~ .e-input-efects:before,\n.e-input-group .e-input:focus:invalid ~ .e-input-efects:after,\n.e-input-group .e-input.focus:invalid ~ .e-input-efects:after {\n  background-color: #F44336;\n}\n.e-input-group .e-input.empty ~ .floating-label {\n  opacity: 1;\n}\n.e-input-group .e-input-efects:before {\n  position: absolute;\n  content: \"\";\n  width: 100%;\n  left: 0;\n  height: 2px;\n  background-color: #009587;\n  bottom: -1px;\n  transform: scaleX(0);\n  transition: transform 0s;\n}\n.e-input-group .e-input:focus ~ .e-input-efects:before,\n.e-input-group .e-input.focus ~ .e-input-efects:before {\n  transform: scaleX(1);\n  transition: transform 0.2s ease-out;\n}\n.e-input-group .e-input-efects:after {\n  content: \"\";\n  position: absolute;\n  height: 18px;\n  width: 100px;\n  margin-top: -1px;\n  top: 0;\n  left: 0;\n  pointer-events: none;\n  opacity: 0.9;\n  transform-origin: left;\n}\n.e-input-group .input-lg ~ .e-input-efects:after {\n  height: 26px;\n}\n.e-input-group textarea {\n  resize: none;\n}\n.e-input-group textarea ~ .input-highlight {\n  margin-top: 0px;\n}\n.e-input-group .e-input:focus ~ .e-input-efects:after,\n.e-input-group .e-input.focus ~ .e-input-efects:after {\n  -webkit-animation: input-highlight 0.3s ease;\n  -moz-animation: input-highlight 0.3s ease;\n  -o-animation: input-highlight 0.3s ease;\n  animation: input-highlight 0.3s ease;\n  -webkit-animation-fill-mode: forwards;\n  -moz-animation-fill-mode: forwards;\n  -o-animation-fill-mode: forwards;\n  animation-fill-mode: forwards;\n  opacity: 0;\n}\n.e-input-group .e-hint {\n  position: absolute;\n  font-size: 80%;\n  display: none;\n}\n.e-input-group .e-input:focus ~ .e-hint,\n.e-input-group .e-input.focus ~ .e-hint {\n  display: block;\n}\n.e-input-group select ~ .e-input-efects:after {\n  display: none;\n}\n.has-label {\n  margin-top: 40px;\n}\n.e-input-group.has-warning .e-input-efects:before,\n.e-input-group.has-warning input.e-input:focus ~ .e-input-efects:after,\n.e-input-group.has-warning input.e-input.focus ~ .e-input-efects:after {\n  background: #FF5722;\n}\n.e-input-group.has-warning .control-label,\n.e-input-group.has-warning input.e-input:not(.empty) ~ .floating-label,\n.e-input-group.has-warning .e-count {\n  color: #FF5722;\n}\n.e-input-group.has-error .e-input-efects:before,\n.e-input-group.has-error input.e-input:focus ~ .e-input-efects:after,\n.e-input-group.has-error input.e-input.focus ~ .e-input-efects:after {\n  background: #F44336;\n}\n.e-input-group.has-error .control-label,\n.e-input-group.has-error input.e-input:not(.empty) ~ .floating-label,\n.e-input-group.has-error .e-count {\n  color: #F44336 !important;\n}\n.e-input-group.has-success .e-input-efects:before,\n.e-input-group.has-success input.e-input:focus ~ .e-input-efects:after,\n.e-input-group.has-success input.e-input.focus ~ .e-input-efects:after {\n  background: #009587;\n}\n.e-input-group.has-success .control-label,\n.e-input-group.has-success input.e-input:not(.empty) ~ .floating-label,\n.e-input-group.has-success .e-count {\n  color: #009587;\n}\n.e-input-group.has-info .e-input-efects:before,\n.e-input-group.has-info input.e-input:focus ~ .e-input-efects:after,\n.e-input-group.has-info input.e-input.focus ~ .e-input-efects:after {\n  background: #03A9F4;\n}\n.e-input-group.has-info .control-label,\n.e-input-group.has-info input.e-input:not(.empty) ~ .floating-label,\n.e-input-group.has-info .e-count {\n  color: #03A9F4;\n}\n.e-input-group .e-input-efects:before,\n.e-input-group-default .e-input-efects:before {\n  background-color: #009587;\n}\n.e-input-group-primary .e-input-efects:before {\n  background-color: #009587;\n}\n.e-input-group-success .e-input-efects:before {\n  background-color: #0F9D58;\n}\n.e-input-group-info .e-input-efects:before {\n  background-color: #03A9F4;\n}\n.e-input-group-warning .e-input-efects:before {\n  background-color: #FF5722;\n}\n.e-input-group-danger .e-input-efects:before {\n  background-color: #F44336;\n}\n.e-input-group-material-red .e-input-efects:before {\n  background-color: #F44336;\n}\n.e-input-group-material-lightblue .e-input-efects:before {\n  background-color: #03A9F4;\n}\n.e-input-group-material-cyan .e-input-efects:before {\n  background-color: #00BCD4;\n}\n.e-input-group-material-lightgreen .e-input-efects:before {\n  background-color: #8BC34A;\n}\n.e-input-group-material-orange .e-input-efects:before {\n  background-color: #FF9800;\n}\n.e-input-group-material-deeporange .e-input-efects:before {\n  background-color: #FF5722;\n}\n.e-input-group input.e-input:focus ~ .e-input-efects:after,\n.e-input-group-default input.e-input:focus ~ .e-input-efects:after {\n  background-color: #009587;\n}\n.e-input-group-primary input.e-input:focus ~ .e-input-efects:after {\n  background-color: #009587;\n}\n.e-input-group-success input.e-input:focus ~ .e-input-efects:after {\n  background-color: #0F9D58;\n}\n.e-input-group-info input.e-input:focus ~ .e-input-efects:after {\n  background-color: #03A9F4;\n}\n.e-input-group-warning input.e-input:focus ~ .e-input-efects:after {\n  background-color: #FF5722;\n}\n.e-input-group-danger input.e-input:focus ~ .e-input-efects:after {\n  background-color: #F44336;\n}\n.e-input-group-material-red input.e-input:focus ~ .e-input-efects:after {\n  background-color: #F44336;\n}\n.e-input-group-material-lightblue input.e-input:focus ~ .e-input-efects:after {\n  background-color: #03A9F4;\n}\n.e-input-group-material-cyan input.e-input:focus ~ .e-input-efects:after {\n  background-color: #00BCD4;\n}\n.e-input-group-material-lightgreen input.e-input:focus ~ .e-input-efects:after {\n  background-color: #8BC34A;\n}\n.e-input-group-material-orange input.e-input:focus ~ .e-input-efects:after {\n  background-color: #FF9800;\n}\n.e-input-group-material-deeporange input.e-input:focus ~ .e-input-efects:after {\n  background-color: #FF5722;\n}\n.e-input-group input.e-input.focus ~ .e-input-efects:after,\n.e-input-group-default input.e-input.focus ~ .e-input-efects:after {\n  background-color: #009587;\n}\n.e-input-group-primary input.e-input.focus ~ .e-input-efects:after {\n  background-color: #009587;\n}\n.e-input-group-success input.e-input.focus ~ .e-input-efects:after {\n  background-color: #0F9D58;\n}\n.e-input-group-info input.e-input.focus ~ .e-input-efects:after {\n  background-color: #03A9F4;\n}\n.e-input-group-warning input.e-input.focus ~ .e-input-efects:after {\n  background-color: #FF5722;\n}\n.e-input-group-danger input.e-input.focus ~ .e-input-efects:after {\n  background-color: #F44336;\n}\n.e-input-group-material-red input.e-input.focus ~ .e-input-efects:after {\n  background-color: #F44336;\n}\n.e-input-group-material-lightblue input.e-input.focus ~ .e-input-efects:after {\n  background-color: #03A9F4;\n}\n.e-input-group-material-cyan input.e-input.focus ~ .e-input-efects:after {\n  background-color: #00BCD4;\n}\n.e-input-group-material-lightgreen input.e-input.focus ~ .e-input-efects:after {\n  background-color: #8BC34A;\n}\n.e-input-group-material-orange input.e-input.focus ~ .e-input-efects:after {\n  background-color: #FF9800;\n}\n.e-input-group-material-deeporange input.e-input.focus ~ .e-input-efects:after {\n  background-color: #FF5722;\n}\n.e-input-group .control-label,\n.e-input-group-default .control-label {\n  color: rgba(0, 0, 0, 0.84);\n}\n.e-input-group-primary .control-label {\n  color: #009587;\n}\n.e-input-group-success .control-label {\n  color: #0F9D58;\n}\n.e-input-group-info .control-label {\n  color: #03A9F4;\n}\n.e-input-group-warning .control-label {\n  color: #FF5722;\n}\n.e-input-group-danger .control-label {\n  color: #F44336;\n}\n.e-input-group-material-red .control-label {\n  color: #F44336;\n}\n.e-input-group-material-lightblue .control-label {\n  color: #03A9F4;\n}\n.e-input-group-material-cyan .control-label {\n  color: #00BCD4;\n}\n.e-input-group-material-lightgreen .control-label {\n  color: #8BC34A;\n}\n.e-input-group-material-orange .control-label {\n  color: #FF9800;\n}\n.e-input-group-material-deeporange .control-label {\n  color: #FF5722;\n}\n.e-input-group .e-count,\n.e-input-group-default .e-count {\n  color: rgba(0, 0, 0, 0.84);\n}\n.e-input-group-primary .e-count {\n  color: #009587;\n}\n.e-input-group-success .e-count {\n  color: #0F9D58;\n}\n.e-input-group-info .e-count {\n  color: #03A9F4;\n}\n.e-input-group-warning .e-count {\n  color: #FF5722;\n}\n.e-input-group-danger .e-count {\n  color: #F44336;\n}\n.e-input-group-material-red .e-count {\n  color: #F44336;\n}\n.e-input-group-material-lightblue .e-count {\n  color: #03A9F4;\n}\n.e-input-group-material-cyan .e-count {\n  color: #00BCD4;\n}\n.e-input-group-material-lightgreen .e-count {\n  color: #8BC34A;\n}\n.e-input-group-material-orange .e-count {\n  color: #FF9800;\n}\n.e-input-group-material-deeporange .e-count {\n  color: #FF5722;\n}\n.e-input-group input.e-input:not(.empty) ~ .floating-label,\n.e-input-group-default input.e-input:not(.empty) ~ .floating-label {\n  color: #009587;\n}\n.e-input-group-primary input.e-input:not(.empty) ~ .floating-label {\n  color: #009587;\n}\n.e-input-group-success input.e-input:not(.empty) ~ .floating-label {\n  color: #0F9D58;\n}\n.e-input-group-info input.e-input:not(.empty) ~ .floating-label {\n  color: #03A9F4;\n}\n.e-input-group-warning input.e-input:not(.empty) ~ .floating-label {\n  color: #FF5722;\n}\n.e-input-group-danger input.e-input:not(.empty) ~ .floating-label {\n  color: #F44336;\n}\n.e-input-group-material-red input.e-input:not(.empty) ~ .floating-label {\n  color: #F44336;\n}\n.e-input-group-material-lightblue input.e-input:not(.empty) ~ .floating-label {\n  color: #03A9F4;\n}\n.e-input-group-material-cyan input.e-input:not(.empty) ~ .floating-label {\n  color: #00BCD4;\n}\n.e-input-group-material-lightgreen input.e-input:not(.empty) ~ .floating-label {\n  color: #8BC34A;\n}\n.e-input-group-material-orange input.e-input:not(.empty) ~ .floating-label {\n  color: #FF9800;\n}\n.e-input-group-material-deeporange input.e-input:not(.empty) ~ .floating-label {\n  color: #FF5722;\n}\n.e-input-group input.e-input:not(.empty) ~ .e-count,\n.e-input-group-default input.e-input:not(.empty) ~ .e-count {\n  color: #009587;\n}\n.e-input-group-primary input.e-input:not(.empty) ~ .e-count {\n  color: #009587;\n}\n.e-input-group-success input.e-input:not(.empty) ~ .e-count {\n  color: #0F9D58;\n}\n.e-input-group-info input.e-input:not(.empty) ~ .e-count {\n  color: #03A9F4;\n}\n.e-input-group-warning input.e-input:not(.empty) ~ .e-count {\n  color: #FF5722;\n}\n.e-input-group-danger input.e-input:not(.empty) ~ .e-count {\n  color: #F44336;\n}\n.e-input-group-material-red input.e-input:not(.empty) ~ .e-count {\n  color: #F44336;\n}\n.e-input-group-material-lightblue input.e-input:not(.empty) ~ .e-count {\n  color: #03A9F4;\n}\n.e-input-group-material-cyan input.e-input:not(.empty) ~ .e-count {\n  color: #00BCD4;\n}\n.e-input-group-material-lightgreen input.e-input:not(.empty) ~ .e-count {\n  color: #8BC34A;\n}\n.e-input-group-material-orange input.e-input:not(.empty) ~ .e-count {\n  color: #FF9800;\n}\n.e-input-group-material-deeporange input.e-input:not(.empty) ~ .e-count {\n  color: #FF5722;\n}\n.e-input-group .e-input-group {\n  margin-right: 5px;\n  margin-left: 5px;\n}\n.e-input-group .e-input-group .e-input {\n  float: none;\n}\n.e-input-group .input-group-addon {\n  border: 0;\n  background: transparent;\n}\n.e-input-group .input-group-btn .btn {\n  border-radius: 4px;\n  margin: 0;\n}\nselect.e-input {\n  border: 0;\n  box-shadow: none;\n  border-bottom: 1px solid #757575;\n  border-radius: 0;\n}\nselect.e-input:focus,\nselect.e-input.focus {\n  box-shadow: none;\n  border-color: #757575;\n}\n@-webkit-keyframes input-highlight {\n  0% {\n    left: 20%;\n    transform: scaleX(20%);\n  }\n  99% {\n    transform: scaleX(0);\n    left: 0;\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n@keyframes input-highlight {\n  0% {\n    left: 20%;\n    transform: scaleX(20%);\n  }\n  99% {\n    transform: scaleX(0);\n    left: 0;\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 310 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _react = __webpack_require__(54);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(267);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	__webpack_require__(311);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// require('!css!less!./progress.less');
+
+	var Progress = (function (_React$Component) {
+	    _inherits(Progress, _React$Component);
+
+	    function Progress(props) {
+	        _classCallCheck(this, Progress);
+
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Progress).call(this, props));
+
+	        _this.state = {
+	            color: props.color || 'e-background-indigo-400',
+	            classes: (0, _classnames2.default)(_this.props.className, _this.props.classes)
+	        };
+	        return _this;
+	    }
+
+	    _createClass(Progress, [{
+	        key: 'componentWillReceiveProps',
+	        value: function componentWillReceiveProps(nextProps) {
+	            this.setState({
+	                color: nextProps.color || 'e-background-indigo-400',
+	                classes: (0, _classnames2.default)(nextProps.className, nextProps.classes)
+	            });
+	        }
+	    }, {
+	        key: 'renderProgress',
+	        value: function renderProgress() {
+	            var progressType = this.props.type;
+
+	            switch (progressType) {
+	                case 'circle':
+	                    var progressClasses = (0, _classnames2.default)('e-progress-circle', this.props.small ? 'small' : '');
+	                    return _react2.default.createElement(
+	                        'div',
+	                        { className: progressClasses },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'ball-frame ball-frame-1' },
+	                            _react2.default.createElement('div', { className: (0, _classnames2.default)('round-ball', this.state.color) })
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'ball-frame ball-frame-2' },
+	                            _react2.default.createElement('div', { className: (0, _classnames2.default)('round-ball', this.state.color) })
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'ball-frame ball-frame-3' },
+	                            _react2.default.createElement('div', { className: (0, _classnames2.default)('round-ball', this.state.color) })
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'ball-frame ball-frame-4' },
+	                            _react2.default.createElement('div', { className: (0, _classnames2.default)('round-ball', this.state.color) })
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'ball-frame ball-frame-5' },
+	                            _react2.default.createElement('div', { className: (0, _classnames2.default)('round-ball', this.state.color) })
+	                        )
+	                    );
+	                    break;
+	                case 'dots':
+	                    return _react2.default.createElement(
+	                        'div',
+	                        { className: 'e-progress-dots' },
+	                        _react2.default.createElement('div', { className: (0, _classnames2.default)('e-progress-dot e-progress-dot-1', this.state.color) }),
+	                        _react2.default.createElement('div', { className: (0, _classnames2.default)('e-progress-dot e-progress-dot-2', this.state.color) }),
+	                        _react2.default.createElement('div', { className: (0, _classnames2.default)('e-progress-dot e-progress-dot-3', this.state.color) }),
+	                        _react2.default.createElement('div', { className: (0, _classnames2.default)('e-progress-dot e-progress-dot-4', this.state.color) }),
+	                        _react2.default.createElement('div', { className: (0, _classnames2.default)('e-progress-dot e-progress-dot-5', this.state.color) })
+	                    );
+	                    break;
+	                case 'fix':
+	                    return _react2.default.createElement(
+	                        'div',
+	                        { className: 'e-progress-fix' },
+	                        _react2.default.createElement('div', { className: 'e-progress-fix-slider' })
+	                    );
+	                    break;
+	                case 'dynamic':
+	                    return _react2.default.createElement(
+	                        'div',
+	                        { className: 'e-progress-dynamic' },
+	                        _react2.default.createElement('div', { className: 'e-progress-dynamic-slider' }),
+	                        _react2.default.createElement('div', { className: 'e-progress-dynamic-slider second-slider' })
+	                    );
+	                    break;
+	                case 'slider':
+	                default:
+	                    return _react2.default.createElement(
+	                        'div',
+	                        { className: (0, _classnames2.default)('e-progress-slider', this.state.color) },
+	                        _react2.default.createElement('div', { className: 'e-progress-slider-line' }),
+	                        _react2.default.createElement('div', { className: 'break dot1' }),
+	                        _react2.default.createElement('div', { className: 'break dot2' }),
+	                        _react2.default.createElement('div', { className: 'break dot3' })
+	                    );
+	                    break;
+	            }
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return this.renderProgress();
+	        }
+	    }]);
+
+	    return Progress;
+	})(_react2.default.Component);
+
+	module.exports = Progress;
+
+/***/ },
+/* 311 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(312);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(273)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../css-loader/index.js!./../../less-loader/index.js!./progress.less", function() {
+				var newContent = require("!!./../../css-loader/index.js!./../../less-loader/index.js!./progress.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 312 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(272)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".e-progress-slider {\n  position: relative;\n  width: 100%;\n  height: 2px;\n}\n.e-progress-slider .e-progress-slider-line {\n  position: absolute;\n  background: inherit;\n  width: 100%;\n  height: 2px;\n}\n.e-progress-slider .break {\n  position: absolute;\n  background: #fff;\n  width: 6px;\n  height: 2px;\n}\n.e-progress-slider .dot1 {\n  -webkit-animation: loading 2s infinite;\n  -moz-animation: loading 2s infinite;\n  -ms-animation: loading 2s infinite;\n  -o-animation: loading 2s infinite;\n  animation: loading 2s infinite;\n}\n.e-progress-slider .dot2 {\n  -webkit-animation: loading 2s 0.5s infinite;\n  -moz-animation: loading 2s 0.5s infinite;\n  -ms-animation: loading 2s 0.5s infinite;\n  -o-animation: loading 2s 0.5s infinite;\n  animation: loading 2s 0.5s infinite;\n}\n.e-progress-slider .dot3 {\n  -webkit-animation: loading 2s 1s infinite;\n  -moz-animation: loading 2s 1s infinite;\n  -ms-animation: loading 2s 1s infinite;\n  -o-animation: loading 2s 1s infinite;\n  animation: loading 2s 1s infinite;\n}\n@-moz-keyframes loading {\n  from {\n    left: 0;\n  }\n  to {\n    left: 100%;\n  }\n}\n@-webkit-keyframes loading {\n  from {\n    left: 0;\n  }\n  to {\n    left: 100%;\n  }\n}\n@-ms-keyframes loading {\n  from {\n    left: 0;\n  }\n  to {\n    left: 100%;\n  }\n}\n@-o-keyframes loading {\n  from {\n    left: 0;\n  }\n  to {\n    left: 100%;\n  }\n}\n@keyframes loading {\n  from {\n    left: 0;\n  }\n  to {\n    left: 100%;\n  }\n}\n.e-progress-circle {\n  position: relative;\n  z-index: 2;\n  margin: 0 auto;\n  width: 90px;\n  height: 90px;\n}\n.e-progress-circle.small {\n  width: 30px;\n  height: 30px;\n}\n.e-progress-circle.small .ball-frame {\n  width: 25px;\n  height: 25px;\n}\n.e-progress-circle.small .ball-frame .round-ball {\n  width: 5px;\n  height: 5px;\n}\n.e-progress-circle .ball-frame {\n  position: absolute;\n  width: 86px;\n  height: 86px;\n  opacity: 0;\n  -moz-transform: rotate(225deg);\n  -moz-animation: orbit 3.8499999999999996s infinite;\n  -webkit-transform: rotate(225deg);\n  -webkit-animation: orbit 3.8499999999999996s infinite;\n  -ms-transform: rotate(225deg);\n  -ms-animation: orbit 3.8499999999999996s infinite;\n  -o-transform: rotate(225deg);\n  -o-animation: orbit 3.8499999999999996s infinite;\n  transform: rotate(225deg);\n  animation: orbit 3.8499999999999996s infinite;\n}\n.e-progress-circle .ball-frame .round-ball {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  background: inherit;\n  left: 0px;\n  top: 0px;\n  -moz-border-radius: 5px;\n  -webkit-border-radius: 5px;\n  -ms-border-radius: 5px;\n  -o-border-radius: 5px;\n  border-radius: 5px;\n}\n.e-progress-circle .ball-frame-1 {\n  -moz-animation-delay: 0.84s;\n  -webkit-animation-delay: 0.84s;\n  -ms-animation-delay: 0.84s;\n  -o-animation-delay: 0.84s;\n  animation-delay: 0.84s;\n}\n.e-progress-circle .ball-frame-2 {\n  -moz-animation-delay: 0.17s;\n  -webkit-animation-delay: 0.17s;\n  -ms-animation-delay: 0.17s;\n  -o-animation-delay: 0.17s;\n  animation-delay: 0.17s;\n}\n.e-progress-circle .ball-frame-3 {\n  -moz-animation-delay: 0.34s;\n  -webkit-animation-delay: 0.34s;\n  -ms-animation-delay: 0.34s;\n  -o-animation-delay: 0.34s;\n  animation-delay: 0.34s;\n}\n.e-progress-circle .ball-frame-4 {\n  -moz-animation-delay: 0.5s;\n  -webkit-animation-delay: 0.5s;\n  -ms-animation-delay: 0.5s;\n  -o-animation-delay: 0.5s;\n  animation-delay: 0.5s;\n}\n.e-progress-circle .ball-frame-5 {\n  -moz-animation-delay: 0.67s;\n  -webkit-animation-delay: 0.67s;\n  -ms-animation-delay: 0.67s;\n  -o-animation-delay: 0.67s;\n  animation-delay: 0.67s;\n}\n@-moz-keyframes orbit {\n  0% {\n    opacity: 1;\n    z-index: 99;\n    -moz-transform: rotate(180deg);\n    -moz-animation-timing-function: ease-out;\n  }\n  7% {\n    opacity: 1;\n    -moz-transform: rotate(300deg);\n    -moz-animation-timing-function: linear;\n    -moz-origin: 0%;\n  }\n  30% {\n    opacity: 1;\n    -moz-transform: rotate(410deg);\n    -moz-animation-timing-function: ease-in-out;\n    -moz-origin: 7%;\n  }\n  39% {\n    opacity: 1;\n    -moz-transform: rotate(645deg);\n    -moz-animation-timing-function: linear;\n    -moz-origin: 30%;\n  }\n  70% {\n    opacity: 1;\n    -moz-transform: rotate(770deg);\n    -moz-animation-timing-function: ease-out;\n    -moz-origin: 39%;\n  }\n  75% {\n    opacity: 1;\n    -moz-transform: rotate(900deg);\n    -moz-animation-timing-function: ease-out;\n    -moz-origin: 70%;\n  }\n  76% {\n    opacity: 0;\n    -moz-transform: rotate(900deg);\n  }\n  100% {\n    opacity: 0;\n    -moz-transform: rotate(900deg);\n  }\n}\n@-webkit-keyframes orbit {\n  0% {\n    opacity: 1;\n    z-index: 99;\n    -webkit-transform: rotate(180deg);\n    -webkit-animation-timing-function: ease-out;\n  }\n  7% {\n    opacity: 1;\n    -webkit-transform: rotate(300deg);\n    -webkit-animation-timing-function: linear;\n    -webkit-origin: 0%;\n  }\n  30% {\n    opacity: 1;\n    -webkit-transform: rotate(410deg);\n    -webkit-animation-timing-function: ease-in-out;\n    -webkit-origin: 7%;\n  }\n  39% {\n    opacity: 1;\n    -webkit-transform: rotate(645deg);\n    -webkit-animation-timing-function: linear;\n    -webkit-origin: 30%;\n  }\n  70% {\n    opacity: 1;\n    -webkit-transform: rotate(770deg);\n    -webkit-animation-timing-function: ease-out;\n    -webkit-origin: 39%;\n  }\n  75% {\n    opacity: 1;\n    -webkit-transform: rotate(900deg);\n    -webkit-animation-timing-function: ease-out;\n    -webkit-origin: 70%;\n  }\n  76% {\n    opacity: 0;\n    -webkit-transform: rotate(900deg);\n  }\n  100% {\n    opacity: 0;\n    -webkit-transform: rotate(900deg);\n  }\n}\n@-ms-keyframes orbit {\n  0% {\n    opacity: 1;\n    z-index: 99;\n    -ms-transform: rotate(180deg);\n    -ms-animation-timing-function: ease-out;\n  }\n  7% {\n    opacity: 1;\n    -ms-transform: rotate(300deg);\n    -ms-animation-timing-function: linear;\n    -ms-origin: 0%;\n  }\n  30% {\n    opacity: 1;\n    -ms-transform: rotate(410deg);\n    -ms-animation-timing-function: ease-in-out;\n    -ms-origin: 7%;\n  }\n  39% {\n    opacity: 1;\n    -ms-transform: rotate(645deg);\n    -ms-animation-timing-function: linear;\n    -ms-origin: 30%;\n  }\n  70% {\n    opacity: 1;\n    -ms-transform: rotate(770deg);\n    -ms-animation-timing-function: ease-out;\n    -ms-origin: 39%;\n  }\n  75% {\n    opacity: 1;\n    -ms-transform: rotate(900deg);\n    -ms-animation-timing-function: ease-out;\n    -ms-origin: 70%;\n  }\n  76% {\n    opacity: 0;\n    -ms-transform: rotate(900deg);\n  }\n  100% {\n    opacity: 0;\n    -ms-transform: rotate(900deg);\n  }\n}\n@-o-keyframes orbit {\n  0% {\n    opacity: 1;\n    z-index: 99;\n    -o-transform: rotate(180deg);\n    -o-animation-timing-function: ease-out;\n  }\n  7% {\n    opacity: 1;\n    -o-transform: rotate(300deg);\n    -o-animation-timing-function: linear;\n    -o-origin: 0%;\n  }\n  30% {\n    opacity: 1;\n    -o-transform: rotate(410deg);\n    -o-animation-timing-function: ease-in-out;\n    -o-origin: 7%;\n  }\n  39% {\n    opacity: 1;\n    -o-transform: rotate(645deg);\n    -o-animation-timing-function: linear;\n    -o-origin: 30%;\n  }\n  70% {\n    opacity: 1;\n    -o-transform: rotate(770deg);\n    -o-animation-timing-function: ease-out;\n    -o-origin: 39%;\n  }\n  75% {\n    opacity: 1;\n    -o-transform: rotate(900deg);\n    -o-animation-timing-function: ease-out;\n    -o-origin: 70%;\n  }\n  76% {\n    opacity: 0;\n    -o-transform: rotate(900deg);\n  }\n  100% {\n    opacity: 0;\n    -o-transform: rotate(900deg);\n  }\n}\n@keyframes orbit {\n  0% {\n    opacity: 1;\n    z-index: 99;\n    transform: rotate(180deg);\n    animation-timing-function: ease-out;\n  }\n  7% {\n    opacity: 1;\n    transform: rotate(300deg);\n    animation-timing-function: linear;\n    origin: 0%;\n  }\n  30% {\n    opacity: 1;\n    transform: rotate(410deg);\n    animation-timing-function: ease-in-out;\n    origin: 7%;\n  }\n  39% {\n    opacity: 1;\n    transform: rotate(645deg);\n    animation-timing-function: linear;\n    origin: 30%;\n  }\n  70% {\n    opacity: 1;\n    transform: rotate(770deg);\n    animation-timing-function: ease-out;\n    origin: 39%;\n  }\n  75% {\n    opacity: 1;\n    transform: rotate(900deg);\n    animation-timing-function: ease-out;\n    origin: 70%;\n  }\n  76% {\n    opacity: 0;\n    transform: rotate(900deg);\n  }\n  100% {\n    opacity: 0;\n    transform: rotate(900deg);\n  }\n}\n.e-progress-dots {\n  position: relative;\n  width: 100%;\n  height: 20px;\n  overflow: hidden;\n}\n.e-progress-dots .e-progress-dot {\n  opacity: 0.2;\n  background-color: inherit;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 10px;\n  height: 10px;\n  -moz-border-radius: 5px;\n  -moz-animation-name: bounce_following-balls;\n  -moz-animation-duration: 1.5s;\n  -moz-animation-iteration-count: infinite;\n  -moz-transition-timing-function: ease-in-out;\n  -webkit-border-radius: 5px;\n  -webkit-animation-name: bounce_following-balls;\n  -webkit-animation-duration: 1.5s;\n  -webkit-animation-iteration-count: infinite;\n  -webkit-transition-timing-function: ease-in-out;\n  -ms-border-radius: 5px;\n  -ms-animation-name: bounce_following-balls;\n  -ms-animation-duration: 1.5s;\n  -ms-animation-iteration-count: infinite;\n  -ms-transition-timing-function: ease-in-out;\n  -o-border-radius: 5px;\n  -o-animation-name: bounce_following-balls;\n  -o-animation-duration: 1.5s;\n  -o-animation-iteration-count: infinite;\n  -o-transition-timing-function: ease-in-out;\n  border-radius: 5px;\n  animation-name: bounce_following-balls;\n  animation-duration: 1.5s;\n  animation-iteration-count: infinite;\n  transition-timing-function: ease-in-out;\n}\n.e-progress-dots .e-progress-dot-1 {\n  -moz-animation-delay: 0s;\n}\n.e-progress-dots .e-progress-dot-1 {\n  -webkit-animation-delay: 0s;\n}\n.e-progress-dots .e-progress-dot-1 {\n  -ms-animation-delay: 0s;\n}\n.e-progress-dots .e-progress-dot-1 {\n  -o-animation-delay: 0s;\n}\n.e-progress-dots .e-progress-dot-1 {\n  animation-delay: 0s;\n}\n.e-progress-dots .e-progress-dot-2 {\n  -moz-animation-delay: 0.08s;\n  -webkit-animation-delay: 0.08s;\n  -ms-animation-delay: 0.08s;\n  -o-animation-delay: 0.08s;\n  animation-delay: 0.08s;\n}\n.e-progress-dots .e-progress-dot-3 {\n  -moz-animation-delay: 0.16s;\n  -webkit-animation-delay: 0.16s;\n  -ms-animation-delay: 0.16s;\n  -o-animation-delay: 0.16s;\n  animation-delay: 0.16s;\n}\n.e-progress-dots .e-progress-dot-4 {\n  -moz-animation-delay: 0.24s;\n  -webkit-animation-delay: 0.24s;\n  -ms-animation-delay: 0.24s;\n  -o-animation-delay: 0.24s;\n  animation-delay: 0.24s;\n}\n.e-progress-dots .e-progress-dot-5 {\n  -moz-animation-delay: 0.32s;\n  -webkit-animation-delay: 0.32s;\n  -ms-animation-delay: 0.32s;\n  -o-animation-delay: 0.32s;\n  animation-delay: 0.32s;\n}\n@-moz-keyframes bounce_following-balls {\n  0% {\n    left: 0px;\n    opacity: 0.2;\n  }\n  40% {\n    opacity: 1;\n  }\n  100% {\n    margin-right: -10px;\n    left: 100%;\n    opacity: 0;\n  }\n}\n@-webkit-keyframes bounce_following-balls {\n  0% {\n    left: 0px;\n    opacity: 0.2;\n  }\n  40% {\n    opacity: 1;\n  }\n  100% {\n    margin-right: -10px;\n    left: 100%;\n    opacity: 0;\n  }\n}\n@-ms-keyframes bounce_following-balls {\n  0% {\n    left: 0px;\n    opacity: 0.2;\n  }\n  40% {\n    opacity: 1;\n  }\n  100% {\n    margin-right: -10px;\n    left: 100%;\n    opacity: 0;\n  }\n}\n@-o-keyframes bounce_following-balls {\n  0% {\n    left: 0px;\n    opacity: 0.2;\n  }\n  40% {\n    opacity: 1;\n  }\n  100% {\n    margin-right: -10px;\n    left: 100%;\n    opacity: 0;\n  }\n}\n@keyframes bounce_following-balls {\n  0% {\n    left: 0px;\n    opacity: 0.2;\n  }\n  40% {\n    opacity: 1;\n  }\n  100% {\n    margin-right: -10px;\n    left: 100%;\n    opacity: 0;\n  }\n}\n.e-progress-fix {\n  background: #4dceee;\n  position: relative;\n  width: 100%;\n  overflow: hidden;\n  height: 2px;\n}\n.e-progress-fix .e-progress-fix-slider {\n  background: inherit;\n  width: 0;\n  height: 2px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  -moz-animation-name: determinate-simple;\n  -moz-animation-duration: 2.5s;\n  -moz-animation-iteration-count: infinite;\n  -moz-transition-timing-function: ease-in-out;\n  -webkit-animation-name: determinate-simple;\n  -webkit-animation-duration: 2.5s;\n  -webkit-animation-iteration-count: infinite;\n  -webkit-transition-timing-function: ease-in-out;\n  -ms-animation-name: determinate-simple;\n  -ms-animation-duration: 2.5s;\n  -ms-animation-iteration-count: infinite;\n  -ms-transition-timing-function: ease-in-out;\n  -o-animation-name: determinate-simple;\n  -o-animation-duration: 2.5s;\n  -o-animation-iteration-count: infinite;\n  -o-transition-timing-function: ease-in-out;\n  animation-name: determinate-simple;\n  animation-duration: 2.5s;\n  animation-iteration-count: infinite;\n  transition-timing-function: ease-in-out;\n}\n@-moz-keyframes determinate-simple {\n  0% {\n    width: 0;\n  }\n  100% {\n    width: 100%;\n  }\n}\n@-webkit-keyframes determinate-simple {\n  0% {\n    width: 0;\n  }\n  100% {\n    width: 100%;\n  }\n}\n@-ms-keyframes determinate-simple {\n  0% {\n    width: 0;\n  }\n  100% {\n    width: 100%;\n  }\n}\n@-o-keyframes determinate-simple {\n  0% {\n    width: 0;\n  }\n  100% {\n    width: 100%;\n  }\n}\n@keyframes determinate-simple {\n  0% {\n    width: 0;\n  }\n  100% {\n    width: 100%;\n  }\n}\n.e-progress-dynamic {\n  background: #4dceee;\n  position: relative;\n  width: 100%;\n  overflow: hidden;\n  height: 2px;\n}\n.e-progress-dynamic .e-progress-dynamic-slider {\n  background: inherit;\n  width: 0;\n  height: 2px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  -moz-animation-name: indeterminate-slide;\n  -moz-animation-duration: 2.5s;\n  -moz-animation-iteration-count: infinite;\n  -webkit-animation-name: indeterminate-slide;\n  -webkit-animation-duration: 2.5s;\n  -webkit-animation-iteration-count: infinite;\n  -ms-animation-name: indeterminate-slide;\n  -ms-animation-duration: 2.5s;\n  -ms-animation-iteration-count: infinite;\n  -o-animation-name: indeterminate-slide;\n  -o-animation-duration: 2.5s;\n  -o-animation-iteration-count: infinite;\n  animation-name: indeterminate-slide;\n  animation-duration: 2.5s;\n  animation-iteration-count: infinite;\n}\n.e-progress-dynamic .e-progress-dynamic-slider.second-slider {\n  -moz-animation-name: indeterminate-slide-second;\n  -moz-animation-duration: 2.5s;\n  -moz-animation-iteration-count: infinite;\n  -webkit-animation-name: indeterminate-slide-second;\n  -webkit-animation-duration: 2.5s;\n  -webkit-animation-iteration-count: infinite;\n  -ms-animation-name: indeterminate-slide-second;\n  -ms-animation-duration: 2.5s;\n  -ms-animation-iteration-count: infinite;\n  -o-animation-name: indeterminate-slide-second;\n  -o-animation-duration: 2.5s;\n  -o-animation-iteration-count: infinite;\n  animation-name: indeterminate-slide-second;\n  animation-duration: 2.5s;\n  animation-iteration-count: infinite;\n  -moz-animation-delay: 0.8s;\n  -webkit-animation-delay: 0.8s;\n  -ms-animation-delay: 0.8s;\n  -o-animation-delay: 0.8s;\n  animation-delay: 0.8s;\n}\n@-moz-keyframes indeterminate-slide {\n  0% {\n    width: 0;\n  }\n  10% {\n    width: 40%;\n  }\n  60% {\n    width: 10%;\n  }\n  100% {\n    left: 110%;\n  }\n}\n@-webkit-keyframes indeterminate-slide {\n  0% {\n    width: 0;\n  }\n  10% {\n    width: 40%;\n  }\n  60% {\n    width: 10%;\n  }\n  100% {\n    left: 110%;\n  }\n}\n@-ms-keyframes indeterminate-slide {\n  0% {\n    width: 0;\n  }\n  10% {\n    width: 40%;\n  }\n  60% {\n    width: 10%;\n  }\n  100% {\n    left: 110%;\n  }\n}\n@-o-keyframes indeterminate-slide {\n  0% {\n    width: 0;\n  }\n  10% {\n    width: 40%;\n  }\n  60% {\n    width: 10%;\n  }\n  100% {\n    left: 110%;\n  }\n}\n@keyframes indeterminate-slide {\n  0% {\n    width: 0;\n  }\n  10% {\n    width: 40%;\n  }\n  60% {\n    width: 10%;\n  }\n  100% {\n    left: 110%;\n  }\n}\n@-moz-keyframes indeterminate-slide-second {\n  0% {\n    width: 0;\n  }\n  10% {\n    width: 30%;\n  }\n  80% {\n    width: 5%;\n  }\n  100% {\n    left: 110%;\n  }\n}\n@-webkit-keyframes indeterminate-slide-second {\n  0% {\n    width: 0;\n  }\n  10% {\n    width: 30%;\n  }\n  80% {\n    width: 5%;\n  }\n  100% {\n    left: 110%;\n  }\n}\n@-ms-keyframes indeterminate-slide-second {\n  0% {\n    width: 0;\n  }\n  10% {\n    width: 30%;\n  }\n  80% {\n    width: 5%;\n  }\n  100% {\n    left: 110%;\n  }\n}\n@-o-keyframes indeterminate-slide-second {\n  0% {\n    width: 0;\n  }\n  10% {\n    width: 30%;\n  }\n  80% {\n    width: 5%;\n  }\n  100% {\n    left: 110%;\n  }\n}\n@keyframes indeterminate-slide-second {\n  0% {\n    width: 0;\n  }\n  10% {\n    width: 30%;\n  }\n  80% {\n    width: 5%;\n  }\n  100% {\n    left: 110%;\n  }\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 313 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _react = __webpack_require__(54);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(267);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _essenceCore = __webpack_require__(268);
+
+	__webpack_require__(314);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// require('!css!less!./toast.less');
+
+	var ToastBar = (function (_React$Component) {
+	    _inherits(ToastBar, _React$Component);
+
+	    function ToastBar(props) {
+	        _classCallCheck(this, ToastBar);
+
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ToastBar).call(this, props));
+
+	        var self = _this;
+	        _this.timeOut = false;
+	        _this.state = {
+	            classes: (0, _classnames2.default)('toast', { 'toast-multiline': false }, props.classes, props.className),
+	            visible: props.visible,
+	            onStart: props.onStart,
+	            onPause: props.onPause,
+	            onResume: props.onResume,
+	            onEnd: props.onEnd,
+	            delay: parseInt(props.delay) > 0 ? parseInt(props.delay) : 2000
+	        };
+
+	        if (props.visible) {
+	            _this.timeOut = new _essenceCore.Utils.Timer(function () {
+	                self.setState({
+	                    style: {
+	                        bottom: '-2000px',
+	                        opacity: 0,
+	                        zIndex: 0
+	                    },
+	                    visible: false
+	                });
+	                if (props.onEnd) {
+	                    props.onEnd();
+	                }
+	            }, self.state.delay);
+	        }
+	        return _this;
+	    }
+
+	    _createClass(ToastBar, [{
+	        key: 'toastStyle',
+	        value: function toastStyle(visible) {
+	            var style = window.getComputedStyle ? getComputedStyle(this.toastBar, null) : this.toastBar.currentStyle;
+	            var height = parseInt(style['height']);
+	            var width = parseInt(style['width']);
+	            var lineHeight = parseInt(style['line-height']);
+	            var isMultiLine = Math.floor(height / lineHeight) > 1 ? true : false;
+
+	            var containerStyle = window.getComputedStyle ? getComputedStyle(this.toastBarContainer, null) : this.toastBarContainer.currentStyle;
+	            var inlineStyle = {
+	                bottom: visible ? '20px' : '-2000px',
+	                opacity: visible ? 1 : 0,
+	                zIndex: visible ? 1 : 0,
+	                marginRight: '-' + parseInt(containerStyle['width']) / 2 + 'px'
+	            };
+
+	            return {
+	                isMultiLine: isMultiLine,
+	                inlineStyle: inlineStyle
+	            };
+	        }
+	    }, {
+	        key: 'componentWillReceiveProps',
+	        value: function componentWillReceiveProps(nextProps) {
+	            var self = this;
+	            var toastStyles = this.toastStyle(nextProps.visible);
+	            var delay = parseInt(nextProps.delay) > 0 ? parseInt(nextProps.delay) : 2000;
+
+	            this.setState({
+	                classes: (0, _classnames2.default)('toast', nextProps.classes, nextProps.className, { 'toast-multiline': toastStyles.isMultiLine }),
+	                delay: delay,
+	                onStart: nextProps.onStart,
+	                onPause: nextProps.onPause,
+	                onResume: nextProps.onResume,
+	                onEnd: nextProps.onEnd,
+	                visible: nextProps.visible,
+	                style: toastStyles.inlineStyle
+	            });
+
+	            if (nextProps.visible) {
+	                this.timeOut = new _essenceCore.Utils.Timer(function () {
+	                    self.setState({
+	                        style: {
+	                            bottom: '-2000px',
+	                            opacity: 0,
+	                            zIndex: 0
+	                        },
+	                        visible: false
+	                    });
+	                    if (nextProps.onEnd) {
+	                        nextProps.onEnd();
+	                    }
+	                }, delay);
+	                if (this.state.onStart) {
+	                    this.state.onStart();
+	                }
+	            }
+	        }
+	    }, {
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            var toastStyles = this.toastStyle(this.state.visible);
+	            this.setState({
+	                classes: (0, _classnames2.default)(this.state.classes, { 'toast-multiline': toastStyles.isMultiLine }),
+	                style: toastStyles.inlineStyle
+	            });
+	            if (this.state.onStart && this.state.visible) {
+	                this.state.onStart();
+	            }
+	        }
+	    }, {
+	        key: 'componentWillUnmount',
+	        value: function componentWillUnmount() {
+	            if (this.state.onEnd && this.state.visible) {
+	                this.state.onEnd();
+	            }
+	        }
+	    }, {
+	        key: 'pauseTimer',
+	        value: function pauseTimer() {
+	            if (this.timeOut) {
+	                this.timeOut.pause();
+	                if (this.state.onPause && this.state.visible) {
+	                    this.state.onPause();
+	                }
+	            }
+	        }
+	    }, {
+	        key: 'resumeTimer',
+	        value: function resumeTimer() {
+	            if (this.timeOut) {
+	                this.timeOut.resume();
+	                if (this.state.onResume && this.state.visible) {
+	                    this.state.onResume();
+	                }
+	            }
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _this2 = this;
+
+	            return _react2.default.createElement(
+	                'div',
+	                {
+	                    style: this.state.style,
+	                    className: this.state.classes,
+	                    ref: function ref(_ref2) {
+	                        return _this2.toastBarContainer = _ref2;
+	                    },
+	                    onMouseOver: this.pauseTimer.bind(this),
+	                    onMouseOut: this.resumeTimer.bind(this)
+	                },
+	                _react2.default.createElement(
+	                    'div',
+	                    {
+	                        className: 'toast-message',
+	                        ref: function ref(_ref) {
+	                            return _this2.toastBar = _ref;
+	                        }
+	                    },
+	                    this.props.children
+	                )
+	            );
+	        }
+	    }]);
+
+	    return ToastBar;
+	})(_react2.default.Component);
+
+	module.exports = ToastBar;
+
+/***/ },
+/* 314 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(315);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(273)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../css-loader/index.js!./../../less-loader/index.js!./toast.less", function() {
+				var newContent = require("!!./../../css-loader/index.js!./../../less-loader/index.js!./toast.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 315 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(272)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".toast,\n.toast-multiline {\n  position: fixed;\n  bottom: 100px;\n  right: 50%;\n  min-width: 288px;\n  max-width: 568px;\n  min-height: 20px;\n  line-height: 20px;\n  padding: 14px 24px;\n  opacity: 0;\n  border-radius: 200px;\n  font-size: 14px;\n  background-color: #323232;\n  align-items: center;\n  color: #fff;\n  transition-property: opacity, bottom, left, right, width, margin, border-radius;\n  transition-duration: 0.5s;\n  transition-timing-function: ease;\n}\n.toast-multiline {\n  padding: 24px;\n}\n@media (min-width: 320px) {\n  .toast,\n  .toast-multiline {\n    bottom: -2000px;\n  }\n}\n", ""]);
 
 	// exports
 

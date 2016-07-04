@@ -5,6 +5,7 @@ import LikeButton from './LikeButton'
 import Avatar from './Avatar'
 import BelleComponents from './BelleComponents'
 import EssenceComponents from './EssenceComponents'
+//import EssenceComponentTable from './EssenceComponentTable'
 
 class App extends Component {
     render() {
