@@ -15,7 +15,10 @@
     "belle": "^2.0.7",
     "compression": "^1.0.3",
     "cors": "^2.5.2",
+    "css-loader": "^0.23.1",
     "helmet": "^1.3.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
     "loopback": "^2.22.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^2.4.0",
@@ -27,6 +30,7 @@
     "react-essence": "^1.0.10",
     "react-input-mask": "^0.7.1",
     "serve-favicon": "^2.0.1",
+    "style-loader": "^0.13.1",
     "webpack": "^1.13.1"
   },
   "devDependencies": {
