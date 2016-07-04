@@ -4,7 +4,7 @@ import Button from './Button'
 import LikeButton from './LikeButton'
 import Avatar from './Avatar'
 import BelleComponents from './BelleComponents'
-
+//import EssenceComponents from './EssenceComponents'
 
 class App extends Component {
     render() {
@@ -16,6 +16,7 @@ class App extends Component {
                 <div><LikeButton/></div>
                 <div><Avatar pagename = "Engineering" /></div>
                 <div><BelleComponents/></div>
+                
             </div>
         )
     }

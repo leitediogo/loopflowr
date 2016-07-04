@@ -21,9 +21,10 @@
     "loopback-component-explorer": "^2.4.0",
     "loopback-connector-mongodb": "^1.15.2",
     "loopback-datasource-juggler": "^2.39.0",
-    "react": "^15.1.0",
+    "react": "^0.14.x",
     "react-bootstrap": "^0.29.5",
-    "react-dom": "^15.1.0",
+    "react-dom": "^0.14.x",
+    "react-essence": "^1.0.10",
     "react-input-mask": "^0.7.1",
     "serve-favicon": "^2.0.1",
     "webpack": "^1.13.1"
